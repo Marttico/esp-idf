@@ -57,7 +57,7 @@ esp_err_t esp_openthread_get_nat64_prefix(ip6_addr_t *nat64_prefix)
 
 int lwip_hook_netconn_external_resolve(const char *name, ip_addr_t *addr, u8_t addrtype, err_t *err)
 {
-    if (addrtype == NETCONN_DNS_IPV4) {
+    if (addrtype == NETCONN_DNS_IPV4 || !esp_openthread_platform_is_initialized()) {
         return 0;
     }
 
