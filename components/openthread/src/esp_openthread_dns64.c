@@ -103,7 +103,7 @@ static dns_resolve_entry_t *find_free_dns_resolve_entry(void)
 int lwip_hook_dns_external_resolve(const char *name, ip_addr_t *addr, dns_found_callback found, void *callback_arg,
                                    u8_t addrtype, err_t *err)
 {
-    if (addrtype == LWIP_DNS_ADDRTYPE_IPV4) {
+    if (addrtype == LWIP_DNS_ADDRTYPE_IPV4 || !esp_openthread_platform_is_initialized()) {
         return 0;
     }
 
