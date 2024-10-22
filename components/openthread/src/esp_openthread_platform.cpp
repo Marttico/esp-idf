@@ -200,3 +200,8 @@ esp_err_t esp_openthread_platform_process(otInstance *instance, const esp_openth
     }
     return ESP_OK;
 }
+
+bool esp_openthread_platform_is_initialized(void)
+{
+    return s_openthread_platform_initialized;
+}
