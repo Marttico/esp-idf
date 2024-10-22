@@ -146,6 +146,14 @@ esp_err_t esp_openthread_platform_process(otInstance *instance, const esp_openth
  *
  */
 void esp_openthread_set_storage_name(const char *name);
+
+/**
+ * @brief This function returns whether OpenThread platform is initialized.
+ *
+ * @return true if OpenThread platform is initialized, false otherwise
+ *
+ */
+bool esp_openthread_platform_is_initialized(void);
 #ifdef __cplusplus
 } // end of extern "C"
 #endif
